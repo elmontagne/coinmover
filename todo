@@ -1,7 +1,5 @@
 TODO:
 
-save to file
-read from file
 sleep
 compare
 check margin
@@ -9,3 +7,4 @@ move to other wallet
 
 used:
 https://zetcode.com/python/configparser/
+https://docs.ftx.com/#get-balances
