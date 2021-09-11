@@ -18,7 +18,7 @@ dest_sub = config['coinmover']['dest_sub']
 sleeptime = config['coinmover']['sleeptime']
 maxmargin = config['coinmover']['maxmargin']
 
-c = FTX_Class.FtxClient(api_key="cFZDxn-5aHZOrWf15LbBTsNZTGNhZ_YIHpp2-aLV", api_secret="DKAV5qFwsKTzmNVIEsqZEcABUhH5UTQqh2hKBbge",subaccount_name=source_sub)
+c = FTX_Class.FtxClient(api_key=, api_secret=,subaccount_name=source_sub)
 
 check = c.get_wallet()
 print("Balance of degen :")
