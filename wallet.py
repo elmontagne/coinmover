@@ -81,11 +81,4 @@ while True:
 	print("Sleeping for ",sleeptime,"seconds")
 	time.sleep(sleeptime)
  
-#all_wallet = c.get_allwallet()
-#print(all_wallet['main'][1]['coin'])
-#print(all_wallet['main'])
 
-#for id,coin in all_wallet.items():
-#	print("wallet")
-#	for coins in coin:
-#		print(coins) 
