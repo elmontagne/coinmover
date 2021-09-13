@@ -29,8 +29,6 @@ apisecret = config['coinmover']['apisecret']
 percentage_move = config['coinmover']['percentage_move']
 discord_webhook = config['coinmover']['discord_webhook']
 
-currenttime = time.localtime()
-timenow = time.strftime("%I:%M:%S %p", currenttime)
 sleeptime = int(sleeptime)*60
 
 
@@ -38,6 +36,8 @@ sleeptime = int(sleeptime)*60
 c = FTX_Class.FtxClient(api_key=apikey, api_secret=apisecret,subaccount_name=source_sub)
 
 while True:
+	currenttime = time.localtime()
+	timenow = time.strftime("%I:%M:%S %p", currenttime)
 	print(timenow," Checking...")
 	file_exists = os.path.isfile('status')
 	if file_exists:
@@ -62,16 +62,18 @@ while True:
 		print("transferring: ",check_coin,transfer," to: ", dest_sub)
 		move_funds = c.move_funds(check_coin, float(transfer), dest_sub)  
 		status_message = "Transferred: " + check_coin + " " + str(transfer) + " to: " + dest_sub
-		data = {
-    "content" : status_message
-}
-		if discord_webhook != '':
-			result = requests.post(discord_webhook, json = data)
 
 	else:
 		print("No profit this time")
 		print(check[0]['total'] - float(old_balance))
+		status_message = "No profit this time"
 	
+	data = {
+    "content" : status_message
+}
+	if discord_webhook != '':
+			result = requests.post(discord_webhook, json = data)
+
 	for x in check:
 		print(x['coin'], ' ', x['total'], ' ', x['free'])
 	
