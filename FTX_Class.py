@@ -61,9 +61,10 @@ class FtxClient:
     def get_allwallet(self) -> List[dict]:
         return self._get(f'wallet/all_balances')
 
-    def move_funds(self, coin: str, size: float, destination: str) -> dict:
+    def move_funds(self, coin: str, size: float, source: str, destination: str) -> dict:
         return self._post('subaccounts/transfer', {'coin': coin,
                                      'size': size,
+                                     'source': source,
                                      'destination': destination,
                                      })
 
