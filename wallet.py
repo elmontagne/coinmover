@@ -4,7 +4,7 @@
 # In[ ]:
 # Created by elmontagne
 ### author:  elmontagne
-### discord: Daisy#2718
+### discord: j.b.elmontagne#3234
 ### site:    https://github.com/elmontagne/coinmover
 ### Changelog:
 ### * 
